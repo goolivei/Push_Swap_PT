@@ -19,7 +19,7 @@
 # include <limits.h>
 # include <stdio.h>
 # include <stdbool.h>
-# include "../Libft/libft.h"
+# include "../libft_goolivei/libft.h"
 
 typedef struct s_stack_n
 {

@@ -1,6 +1,6 @@
 NAME				= push_swap
 
-LIBFT				= ./Libft/libft.a
+LIBFT				= ./libft_goolivei/libft.a
 HEADER				= header/
 SRC_DIR				= srcs
 OBJ_DIR				= obj/
@@ -28,7 +28,7 @@ start:
 					@make all
 
 $(LIBFT):
-					@make -C ./Libft
+					@make -C ./libft_goolivei
 
 all: 				$(NAME)
 
@@ -41,7 +41,7 @@ $(OBJ_DIR)%.o:		$(SRC_DIR)%.c
 
 clean:
 					@$(RM) -r $(OBJ_DIR)
-					@make clean -C ./Libft
+					@make clean -C ./libft_goolivei
 
 fclean: 			clean
 					@$(RM) $(NAME)
