@@ -6,13 +6,13 @@
 /*   By: goolivei <goolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 13:36:20 by goolivei          #+#    #+#             */
-/*   Updated: 2024/04/22 17:12:38 by goolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:07:56 by goolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-static void set_target_b(t_stack_n *a, t_stack_n *b)
+static void	set_target_b(t_stack_n *a, t_stack_n *b)
 {
 	t_stack_n	*current_a;
 	t_stack_n	*target_node;
@@ -37,6 +37,17 @@ static void set_target_b(t_stack_n *a, t_stack_n *b)
 		else
 			b->target_node = target_node;
 		b = b->next;
+	}
+}
+
+void	min_on_top(t_stack_n **a)
+{
+	while ((*a)->value != find_min(*a)->value)
+	{
+		if (find_min(*a)->above_median)
+			ra(a, false);
+		else
+			rra(a, false);
 	}
 }
 

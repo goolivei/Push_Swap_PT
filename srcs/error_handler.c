@@ -6,7 +6,7 @@
 /*   By: goolivei <goolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:38:34 by goolivei          #+#    #+#             */
-/*   Updated: 2024/04/22 17:17:46 by goolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:02:32 by goolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ int	error_syntax(char *strn)
 {
 	if (!(*strn == '+' || *strn == '-' || (*strn >= '0' && *strn <= '9')))
 		return (1);
-	if (strn[1] && !(*strn == '+' || *strn == '-') && !(strn[1] >= '0' && strn[1] <= '9'))
+	if (strn[1] && !(*strn == '+' || *strn == '-') 
+		&& !(strn[1] >= '0' && strn[1] <= '9'))
 	{
 		ft_printf("strn: %s\n", strn);
 		return (1);

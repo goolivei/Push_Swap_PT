@@ -6,13 +6,13 @@
 /*   By: goolivei <goolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 14:56:26 by goolivei          #+#    #+#             */
-/*   Updated: 2024/04/22 17:19:30 by goolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:04:23 by goolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-static void rev_rotate(t_stack_n **stack)
+static void	rev_rotate(t_stack_n **stack)
 {
 	t_stack_n	*last;
 

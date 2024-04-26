@@ -6,7 +6,7 @@
 /*   By: goolivei <goolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 13:32:57 by goolivei          #+#    #+#             */
-/*   Updated: 2024/04/24 15:59:02 by goolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:31:55 by goolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ static long	ft_atol(const char *s)
 	result = 0;
 	sign = 1;
 	while (*s == ' ' || *s == '\t' || *s == '\n' || 
-			*s == '\r' || *s == '\f' || *s == '\v')
-			s++;
+		*s == '\r' || *s == '\f' || *s == '\v')
+		s++;
 	if (*s == '-' || *s == '+')
 	{
 		if (*s == '-')
@@ -59,7 +59,7 @@ static void	append_node(t_stack_n **stack, int n)
 	}
 }
 
-void	init_stack_a(t_stack_n **a, char **argv)
+void	init_stack_a(t_stack_n **a, char **argv, int argc)
 {
 	int		i;
 	long	n;
@@ -69,18 +69,18 @@ void	init_stack_a(t_stack_n **a, char **argv)
 	{
 		if (error_syntax(argv[i]))
 		{
-			idk(argv);
+			idk_caller(argv, argc);
 			free_errors(a);
 		}
 		n = ft_atol(argv[i]);
 		if (n > INT_MAX || n < INT_MIN)
 		{
-			idk(argv);
+			idk_caller(argv, argc);
 			free_errors(a);
 		}
 		if (error_duplicate(*a, (int)n))
 		{
-			idk(argv);
+			idk_caller(argv, argc);
 			free_errors(a);
 		}
 		append_node(a, (int)n);

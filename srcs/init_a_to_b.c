@@ -6,7 +6,7 @@
 /*   By: goolivei <goolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 12:23:14 by goolivei          #+#    #+#             */
-/*   Updated: 2024/04/24 12:58:28 by goolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:03:02 by goolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	current_index(t_stack_n *stack)
 	}
 }
 
-static void set_target_a(t_stack_n *a, t_stack_n *b)
+static void	set_target_a(t_stack_n *a, t_stack_n *b)
 {
 	t_stack_n	*current_b;
 	t_stack_n	*target_node;

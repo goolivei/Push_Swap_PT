@@ -6,13 +6,13 @@
 /*   By: goolivei <goolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 16:38:33 by goolivei          #+#    #+#             */
-/*   Updated: 2024/04/24 13:18:33 by goolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:08:13 by goolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/push_swap.h"
 
-static void rotate_both(t_stack_n **a, t_stack_n **b, 
+static void	rotate_both(t_stack_n **a, t_stack_n **b, 
 						t_stack_n *cheapest_node)
 {
 	while (*b != cheapest_node->target_node 
@@ -22,7 +22,7 @@ static void rotate_both(t_stack_n **a, t_stack_n **b,
 	current_index(*b);
 }
 
-static void rev_rotate_both(t_stack_n **a, t_stack_n **b, 
+static void	rev_rotate_both(t_stack_n **a, t_stack_n **b, 
 							t_stack_n *cheapest_node)
 {
 	while (*b != cheapest_node->target_node 
@@ -32,7 +32,7 @@ static void rev_rotate_both(t_stack_n **a, t_stack_n **b,
 	current_index(*b);
 }
 
-static void move_a_to_b(t_stack_n **a, t_stack_n **b)
+static void	move_a_to_b(t_stack_n **a, t_stack_n **b)
 {
 	t_stack_n	*cheapest_node;
 
@@ -45,24 +45,13 @@ static void move_a_to_b(t_stack_n **a, t_stack_n **b)
 		rev_rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
 	prep_for_push(b, cheapest_node->target_node, 'b');
-	pb(b, a, false);	
+	pb(b, a, false);
 }
 
-static void move_b_to_a(t_stack_n **a, t_stack_n **b)
+static void	move_b_to_a(t_stack_n **a, t_stack_n **b)
 {
 	prep_for_push(a, (*b)->target_node, 'a');
 	pa(a, b, false);
-}
-
-static void min_on_top(t_stack_n **a)
-{
-	while ((*a)->value != find_min(*a)->value)
-	{
-		if (find_min(*a)->above_median)
-			ra(a, false);
-		else
-			rra(a, false);
-	}
 }
 
 void	sort_stacks(t_stack_n **a, t_stack_n **b)
@@ -83,7 +72,7 @@ void	sort_stacks(t_stack_n **a, t_stack_n **b)
 	while (*b)
 	{
 		init_nodes_b(*a, *b);
-		move_b_to_a(a ,b);
+		move_b_to_a(a, b);
 	}
 	current_index(*a);
 	min_on_top(a);

@@ -6,7 +6,7 @@
 /*   By: goolivei <goolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:00:23 by goolivei          #+#    #+#             */
-/*   Updated: 2024/04/24 14:14:31 by goolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 14:33:31 by goolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ void	idk(char **argv)
 	free(argv);
 }
 
+void	idk_caller(char **argv, int argc)
+{
+	if (argc == 2)
+		idk(argv);
+	else
+		return ;
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack_n	*a;
@@ -32,11 +40,14 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc != 2 || (argc == 2 && !argv[1][0]))
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
-	init_stack_a(&a, argv);
+	if (argc > 2)
+		init_stack_a(&a, argv + 1, argc);
+	else
+		init_stack_a(&a, argv, argc);
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
@@ -46,7 +57,7 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
-	idk(argv);
+	idk_caller(argv, argc);
 	free_stack(&a);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: goolivei <goolivei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 15:14:56 by goolivei          #+#    #+#             */
-/*   Updated: 2024/04/24 14:07:50 by goolivei         ###   ########.fr       */
+/*   Updated: 2024/04/26 13:06:52 by goolivei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_stack_n	*ft_lstlast2(t_stack_n *lst)
 
 t_stack_n	*find_max(t_stack_n *stack)
 {
-	long	max;
+	long		max;
 	t_stack_n	*max_node;
 
 	if (!stack)
@@ -81,8 +81,8 @@ t_stack_n	*find_min(t_stack_n *stack)
 	{
 		if (stack->value < min)
 		{
-			 min = stack->value;
-			 min_node = stack;
+			min = stack->value;
+			min_node = stack;
 		}
 		stack = stack->next;
 	}
